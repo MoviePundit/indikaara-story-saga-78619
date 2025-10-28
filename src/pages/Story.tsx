@@ -8,10 +8,12 @@ import { ImpactMetrics } from "@/components/ImpactMetrics";
 import { Testimonials } from "@/components/Testimonials";
 import { StoryCallToAction } from "@/components/StoryCallToAction";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { WebGLBackground } from "@/components/WebGLBackground";
 
 const Story = () => {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <WebGLBackground />
       <ThemeToggle />
       <StoryHero />
       <OriginStory />
