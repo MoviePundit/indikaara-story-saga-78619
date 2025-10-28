@@ -47,16 +47,16 @@ export const ImpactMetrics = () => {
           {metrics.map((metric, index) => (
             <div
               key={metric.label}
-              className={`group text-center p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-soft ${isVisible ? 'animate-scale-up' : 'opacity-0'}`}
+              className={`group text-center p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-glow hover:scale-110 hover:-translate-y-4 ${isVisible ? 'animate-scale-up' : 'opacity-0'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-hero flex items-center justify-center group-hover:animate-glow">
-                <metric.icon className="w-8 h-8 text-primary-foreground" />
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-hero flex items-center justify-center group-hover:animate-glow group-hover:rotate-12 transition-transform duration-300">
+                <metric.icon className="w-8 h-8 text-primary-foreground group-hover:scale-125 transition-transform" />
               </div>
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-2">
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
                 {metric.value}
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
+              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                 {metric.label}
               </h3>
               <p className="text-sm text-muted-foreground">{metric.description}</p>

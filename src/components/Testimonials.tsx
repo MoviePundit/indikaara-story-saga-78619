@@ -41,10 +41,10 @@ export const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}
-              className={`group p-8 rounded-2xl bg-card border border-border hover:shadow-soft transition-all duration-500 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}
+              className={`group p-8 rounded-2xl bg-card border border-border hover:shadow-glow hover:scale-105 hover:-translate-y-2 transition-all duration-500 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <Quote className="w-10 h-10 text-primary/30 mb-6" />
+              <Quote className="w-10 h-10 text-primary/30 mb-6 group-hover:rotate-12 group-hover:text-primary/50 transition-all duration-300" />
               <p className="text-muted-foreground leading-relaxed mb-6 italic">
                 "{testimonial.quote}"
               </p>
@@ -52,10 +52,10 @@ export const Testimonials = () => {
                 <img
                   src={testimonial.image}
                   alt={testimonial.author}
-                  className="w-12 h-12 rounded-full object-cover ring-2 ring-border"
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-border group-hover:ring-primary/50 group-hover:scale-110 transition-all duration-300"
                 />
                 <div>
-                  <h4 className="font-bold text-foreground">{testimonial.author}</h4>
+                  <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">{testimonial.author}</h4>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>

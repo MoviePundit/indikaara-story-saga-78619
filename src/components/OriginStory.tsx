@@ -25,7 +25,7 @@ export const OriginStory = () => {
           </div>
           
           <div className={`relative transition-all duration-700 delay-300 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}>
-            <div className="aspect-square rounded-2xl bg-gradient-hero shadow-glow animate-glow"></div>
+            <div className="aspect-square rounded-2xl bg-gradient-hero shadow-glow animate-glow hover:scale-105 transition-transform duration-500"></div>
           </div>
         </div>
       </div>

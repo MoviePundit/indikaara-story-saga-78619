@@ -47,15 +47,15 @@ export const CoreValues = () => {
           {values.map((value, index) => (
             <div
               key={value.title}
-              className={`group p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-soft ${isVisible ? 'animate-rotate-in' : 'opacity-0'}`}
+              className={`group p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-glow hover:scale-105 ${isVisible ? 'animate-rotate-in' : 'opacity-0'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start gap-6">
-                <div className={`w-14 h-14 rounded-xl bg-${value.color}/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                  <value.icon className={`w-7 h-7 text-${value.color}`} />
+                <div className={`w-14 h-14 rounded-xl bg-${value.color}/10 flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300`}>
+                  <value.icon className={`w-7 h-7 text-${value.color} group-hover:scale-110 transition-transform`} />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-foreground">{value.title}</h3>
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{value.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                 </div>
               </div>

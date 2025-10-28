@@ -57,7 +57,7 @@ export const Timeline = () => {
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 {/* Year Badge */}
-                <div className="absolute left-8 md:left-1/2 w-16 h-16 -ml-8 rounded-full bg-gradient-hero flex items-center justify-center text-primary-foreground font-bold shadow-glow z-10">
+                <div className="absolute left-8 md:left-1/2 w-16 h-16 -ml-8 rounded-full bg-gradient-hero flex items-center justify-center text-primary-foreground font-bold shadow-glow animate-glow hover:scale-125 transition-transform duration-300 z-10">
                   {milestone.year}
                 </div>
 
@@ -67,8 +67,8 @@ export const Timeline = () => {
                     index % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"
                   } ml-20 md:ml-0`}
                 >
-                  <div className="p-6 rounded-2xl bg-card border border-border hover:shadow-soft transition-all duration-300">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                  <div className="group p-6 rounded-2xl bg-card border border-border hover:shadow-glow hover:scale-105 hover:-translate-y-2 transition-all duration-500">
+                    <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {milestone.title}
                     </h3>
                     <p className="text-muted-foreground">{milestone.description}</p>

@@ -14,20 +14,20 @@ export const StoryHero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-up">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-hero bg-clip-text text-transparent animate-fade-up">
             Our Story
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: "200ms" }}>
             A journey of passion, innovation, and tradition woven together to create something extraordinary
           </p>
-          <div className="flex justify-center gap-4 pt-8">
+          <div className="flex justify-center gap-4 pt-8 animate-scale-up" style={{ animationDelay: "400ms" }}>
             <a
               href="#origin"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium shadow-soft hover:shadow-glow transition-all hover:scale-105"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium shadow-soft hover:shadow-glow transition-all hover:scale-110 animate-glow"
             >
               Discover Our Journey
-              <ArrowDown className="w-4 h-4" />
+              <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
             </a>
           </div>
         </div>

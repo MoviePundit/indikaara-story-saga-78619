@@ -47,7 +47,7 @@ export const TeamSection = () => {
           {team.map((member, index) => (
             <div
               key={member.name}
-              className={`group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-soft transition-all duration-500 ${isVisible ? 'animate-rotate-in' : 'opacity-0'}`}
+              className={`group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-glow hover:scale-105 hover:-translate-y-2 transition-all duration-500 ${isVisible ? 'animate-rotate-in' : 'opacity-0'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="flex flex-col sm:flex-row gap-6 p-6">
@@ -55,20 +55,20 @@ export const TeamSection = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-32 h-32 rounded-xl object-cover ring-2 ring-border group-hover:ring-primary/50 transition-all"
+                    className="w-32 h-32 rounded-xl object-cover ring-2 ring-border group-hover:ring-primary/50 group-hover:scale-110 transition-all duration-300"
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-foreground mb-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
                     {member.name}
                   </h3>
                   <p className="text-primary font-medium mb-3">{member.role}</p>
                   <p className="text-muted-foreground mb-4">{member.bio}</p>
                   <div className="flex gap-3">
-                    <button className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+                    <button className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300">
                       <Linkedin className="w-4 h-4" />
                     </button>
-                    <button className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+                    <button className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300">
                       <Mail className="w-4 h-4" />
                     </button>
                   </div>
