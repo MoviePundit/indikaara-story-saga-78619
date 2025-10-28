@@ -1,6 +1,56 @@
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useRef, useMemo } from 'react';
 import * as THREE from 'three';
+import { MeshDistortMaterial } from '@react-three/drei';
+
+function AbstractShape({ position, scale, color }: { position: [number, number, number], scale: number, color: string }) {
+  const mesh = useRef<THREE.Mesh>(null);
+  
+  useFrame((state) => {
+    if (!mesh.current) return;
+    const time = state.clock.getElapsedTime();
+    mesh.current.rotation.x = time * 0.2;
+    mesh.current.rotation.y = time * 0.3;
+    mesh.current.position.y = position[1] + Math.sin(time * 0.5) * 0.5;
+  });
+
+  return (
+    <mesh ref={mesh} position={position} scale={scale}>
+      <icosahedronGeometry args={[1, 1]} />
+      <MeshDistortMaterial
+        color={color}
+        transparent
+        opacity={0.3}
+        distort={0.4}
+        speed={2}
+        roughness={0.5}
+      />
+    </mesh>
+  );
+}
+
+function TorusShape({ position }: { position: [number, number, number] }) {
+  const mesh = useRef<THREE.Mesh>(null);
+  
+  useFrame((state) => {
+    if (!mesh.current) return;
+    const time = state.clock.getElapsedTime();
+    mesh.current.rotation.x = time * 0.4;
+    mesh.current.rotation.z = time * 0.2;
+  });
+
+  return (
+    <mesh ref={mesh} position={position}>
+      <torusGeometry args={[2, 0.5, 16, 100]} />
+      <meshStandardMaterial
+        color="#8b5cf6"
+        transparent
+        opacity={0.2}
+        wireframe
+      />
+    </mesh>
+  );
+}
 
 function ParticleField() {
   const points = useRef<THREE.Points>(null);
@@ -96,6 +146,16 @@ export const WebGLBackground = () => {
         gl={{ alpha: true, antialias: true }}
       >
         <ambientLight intensity={0.5} />
+        <pointLight position={[10, 10, 10]} intensity={0.8} color="#60a5fa" />
+        <pointLight position={[-10, -10, -10]} intensity={0.8} color="#a78bfa" />
+        
+        {/* Abstract Art Elements */}
+        <AbstractShape position={[-8, 2, -5]} scale={2} color="#8b5cf6" />
+        <AbstractShape position={[8, -2, -8]} scale={1.5} color="#ec4899" />
+        <AbstractShape position={[0, 5, -10]} scale={1.8} color="#3b82f6" />
+        <TorusShape position={[6, 0, -6]} />
+        <TorusShape position={[-6, -3, -8]} />
+        
         <ParticleField />
       </Canvas>
     </div>
