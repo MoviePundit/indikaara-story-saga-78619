@@ -7,10 +7,12 @@ import { TeamSection } from "@/components/TeamSection";
 import { ImpactMetrics } from "@/components/ImpactMetrics";
 import { Testimonials } from "@/components/Testimonials";
 import { StoryCallToAction } from "@/components/StoryCallToAction";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const Story = () => {
   return (
     <div className="min-h-screen">
+      <ThemeToggle />
       <StoryHero />
       <OriginStory />
       <MissionVision />

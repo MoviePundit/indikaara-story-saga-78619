@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const Index = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-section">
+      <ThemeToggle />
       <div className="text-center space-y-8 px-6 animate-fade-up">
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-hero bg-clip-text text-transparent">
           Welcome to Indikaara
