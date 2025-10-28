@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { WebGLBackground } from "@/components/WebGLBackground";
 
 const Index = () => {
   return (
     <div className="relative flex min-h-screen items-center justify-center bg-gradient-section overflow-hidden">
+      {/* WebGL Particle Animation */}
+      <WebGLBackground />
+      
       {/* Animated Background Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
