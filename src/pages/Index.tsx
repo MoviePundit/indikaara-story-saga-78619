@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { WebGLBackground } from "@/components/WebGLBackground";
+import { AnimatedText, GradientText } from "@/components/AnimatedText";
 
 const Index = () => {
   return (
@@ -16,11 +17,21 @@ const Index = () => {
       
       <ThemeToggle />
       <div className="relative z-10 text-center space-y-8 px-6">
-        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-hero bg-clip-text text-transparent animate-fade-up">
-          Welcome to Indikaara
+        <h1 className="text-5xl md:text-7xl font-bold">
+          <AnimatedText 
+            text="Welcome to " 
+            className="bg-gradient-hero bg-clip-text text-transparent"
+            animationType="wave"
+            staggerDelay={80}
+          />
+          <GradientText text="Indikaara" className="animate-pulse" />
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-          Discover our journey of passion, tradition, and innovation
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "600ms" }}>
+          <AnimatedText 
+            text="Discover our journey of passion, tradition, and innovation"
+            animationType="fade"
+            staggerDelay={30}
+          />
         </p>
         <div className="animate-scale-up" style={{ animationDelay: "400ms" }}>
           <Link
