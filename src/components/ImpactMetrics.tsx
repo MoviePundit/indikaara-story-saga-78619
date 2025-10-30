@@ -1,5 +1,6 @@
 import { Users, Globe, PackageCheck, Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { AnimatedText } from "@/components/AnimatedText";
 
 const metrics = [
   {
@@ -36,10 +37,18 @@ export const ImpactMetrics = () => {
       <div className="container mx-auto max-w-6xl">
         <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Impact
+            <AnimatedText 
+              text="Our Impact" 
+              animationType="wave"
+              staggerDelay={120}
+            />
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Making a difference in communities and lives around the world
+            <AnimatedText 
+              text="Making a difference in communities and lives around the world"
+              animationType="fade"
+              staggerDelay={25}
+            />
           </p>
         </div>
 

@@ -1,5 +1,6 @@
 import { Heart, Lightbulb, Users, Award } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { AnimatedText } from "@/components/AnimatedText";
 
 const values = [
   {
@@ -36,10 +37,18 @@ export const CoreValues = () => {
       <div className="container mx-auto max-w-6xl">
         <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Core Values
+            <AnimatedText 
+              text="Our Core Values" 
+              animationType="wave"
+              staggerDelay={100}
+            />
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The principles that drive us forward every day
+            <AnimatedText 
+              text="The principles that drive us forward every day"
+              animationType="fade"
+              staggerDelay={30}
+            />
           </p>
         </div>
 

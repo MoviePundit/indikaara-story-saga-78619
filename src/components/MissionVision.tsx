@@ -1,5 +1,6 @@
 import { Target, Eye } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { AnimatedText } from "@/components/AnimatedText";
 
 export const MissionVision = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -9,10 +10,18 @@ export const MissionVision = () => {
       <div className="container mx-auto max-w-6xl">
         <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Mission & Vision
+            <AnimatedText 
+              text="Mission & Vision" 
+              animationType="wave"
+              staggerDelay={100}
+            />
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Guiding principles that shape everything we do
+            <AnimatedText 
+              text="Guiding principles that shape everything we do"
+              animationType="fade"
+              staggerDelay={30}
+            />
           </p>
         </div>
 

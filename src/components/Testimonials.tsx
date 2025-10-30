@@ -1,5 +1,6 @@
 import { Quote } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { AnimatedText } from "@/components/AnimatedText";
 
 const testimonials = [
   {
@@ -30,10 +31,18 @@ export const Testimonials = () => {
       <div className="container mx-auto max-w-6xl">
         <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            What People Say
+            <AnimatedText 
+              text="What People Say" 
+              animationType="wave"
+              staggerDelay={110}
+            />
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Stories from our global community
+            <AnimatedText 
+              text="Stories from our global community"
+              animationType="fade"
+              staggerDelay={35}
+            />
           </p>
         </div>
 

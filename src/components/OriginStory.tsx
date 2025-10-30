@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { AnimatedText } from "@/components/AnimatedText";
 
 export const OriginStory = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -9,7 +10,11 @@ export const OriginStory = () => {
         <div ref={ref} className="grid md:grid-cols-2 gap-16 items-center">
           <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Where It All Began
+              <AnimatedText 
+                text="Where It All Began" 
+                animationType="wave"
+                staggerDelay={80}
+              />
             </h2>
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>

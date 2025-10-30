@@ -1,5 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-story.jpg";
+import { AnimatedText } from "@/components/AnimatedText";
 
 export const StoryHero = () => {
   return (
@@ -15,11 +16,20 @@ export const StoryHero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-hero bg-clip-text text-transparent animate-fade-up">
-            Our Story
+          <h1 className="text-5xl md:text-7xl font-bold">
+            <AnimatedText 
+              text="Our Story" 
+              className="bg-gradient-hero bg-clip-text text-transparent"
+              animationType="wave"
+              staggerDelay={100}
+            />
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: "200ms" }}>
-            A journey of passion, innovation, and tradition woven together to create something extraordinary
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <AnimatedText 
+              text="A journey of passion, innovation, and tradition woven together to create something extraordinary"
+              animationType="fade"
+              staggerDelay={20}
+            />
           </p>
           <div className="flex justify-center gap-4 pt-8 animate-scale-up" style={{ animationDelay: "400ms" }}>
             <a

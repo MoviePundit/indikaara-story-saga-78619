@@ -1,5 +1,6 @@
 import { ArrowRight, Heart } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { AnimatedText } from "@/components/AnimatedText";
 
 export const StoryCallToAction = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -17,12 +18,19 @@ export const StoryCallToAction = () => {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Be Part of Our Story
+            <AnimatedText 
+              text="Be Part of Our Story" 
+              animationType="wave"
+              staggerDelay={90}
+            />
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Join us in celebrating the artistry of traditional craftsmanship. 
-            Every purchase supports artisans and preserves cultural heritage.
+            <AnimatedText 
+              text="Join us in celebrating the artistry of traditional craftsmanship. Every purchase supports artisans and preserves cultural heritage."
+              animationType="fade"
+              staggerDelay={20}
+            />
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">

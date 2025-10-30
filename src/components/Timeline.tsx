@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { AnimatedText } from "@/components/AnimatedText";
 
 const milestones = [
   {
@@ -36,10 +37,18 @@ export const Timeline = () => {
       <div className="container mx-auto max-w-6xl">
         <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Journey
+            <AnimatedText 
+              text="Our Journey" 
+              animationType="wave"
+              staggerDelay={120}
+            />
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Key milestones that shaped who we are today
+            <AnimatedText 
+              text="Key milestones that shaped who we are today"
+              animationType="fade"
+              staggerDelay={30}
+            />
           </p>
         </div>
 

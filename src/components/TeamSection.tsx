@@ -1,5 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { AnimatedText } from "@/components/AnimatedText";
 
 const team = [
   {
@@ -36,10 +37,18 @@ export const TeamSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Meet Our Team
+            <AnimatedText 
+              text="Meet Our Team" 
+              animationType="wave"
+              staggerDelay={110}
+            />
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Passionate individuals dedicated to celebrating craftsmanship
+            <AnimatedText 
+              text="Passionate individuals dedicated to celebrating craftsmanship"
+              animationType="fade"
+              staggerDelay={25}
+            />
           </p>
         </div>
 
